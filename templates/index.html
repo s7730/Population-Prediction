@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Population Prediction System</title>
+    <style>
+        body {
+            background-image: url({{ url_for('static', filename='pic.jpg') }});
+            background-size: cover; /* This will make the image cover the entire background */
+            background-position: center; /* Center the background image */
+            font-family: Arial, sans-serif; /* Set a fallback font family */
+            color: black; /* Set text color to black */
+            display: flex; /* Use flexbox to center the container */
+            justify-content: center; /* Center horizontally */
+            align-items: center; /* Center vertically */
+            height: 100vh; /* Full height */
+            margin: 0; /* Remove default margin */
+        }
+
+        .container {
+            position: relative; /* Set position to relative */
+            width: 50%; /* Set the container width */
+            padding: 20px; /* Add some padding */
+            box-sizing: border-box; /* Include padding in the width calculation */
+            border-radius: 10px; /* Add border radius for rounded corners */
+            background-color: rgba(128, 128, 128, 0.5); /* Grey color overlay */
+        }
+
+        h1 {
+            text-align: center; /* Center the heading */
+        }
+
+        form {
+            width: 100%; /* Make form width 100% of the container */
+        }
+
+        label {
+            display: block; /* Display labels as block elements for better spacing */
+            margin-bottom: 10px; /* Add bottom margin to labels */
+        }
+
+        input[type="text"],
+        select {
+            width: 100%; /* Make text inputs and select elements fill the entire width */
+            padding: 10px; /* Add padding to input elements */
+            margin-bottom: 20px; /* Add bottom margin to input elements */
+            box-sizing: border-box; /* Include padding in the width calculation */
+            border-radius: 5px; /* Add border radius for rounded corners */
+            border: none; /* Remove default border */
+        }
+
+        input[type="submit"] {
+            width: 100%; /* Make the submit button fill the entire width */
+            padding: 10px; /* Add padding to the submit button */
+            box-sizing: border-box; /* Include padding in the width calculation */
+            border-radius: 5px; /* Add border radius for rounded corners */
+            border: none; /* Remove default border */
+            background-color: #007bff; /* Set background color */
+            color: white; /* Set text color */
+            cursor: pointer; /* Change cursor to pointer on hover */
+        }
+
+        input[type="submit"]:hover {
+            background-color: #0056b3; /* Change background color on hover */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Population Prediction System</h1>
+        <form method="POST" action="/">
+            <label for="country">Select Country:</label>
+            <select name="country" id="country">
+                {% for country in countries %}
+                    <option value="{{ country }}">{{ country }}</option>
+                {% endfor %}
+            </select>
+            <br><br>
+            <label for="year">Enter Year:</label>
+            <input type="text" name="year" id="year" placeholder="Please enter the year">
+            <br><br>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
+</body>
+</html>

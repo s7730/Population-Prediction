@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            /* Set background image */
+            background-image: url("{{ url_for('static', filename='pic.jpg') }}"); 
+            background-size: cover; 
+            background-position: center; 
+        }
+
+        .container {
+            background-color: rgba(211, 211, 211, 0.8); /* Light grey background */
+            padding: 20px; /* Add padding to the container */
+            border-radius: 10px; /* Rounded corners */
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5); /* Add a slight shadow for better visibility */
+            text-align: center; /* Center align text */
+            max-width: 600px; /* Set a maximum width for the container */
+            width: 100%; /* Full width within the max-width */
+        }
+
+        h1, h2, p {
+            color: black; /* Set text color to black */
+        }
+
+        /* Styling for the button */
+        button {
+            padding: 10px 20px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Error</h1>
+        <h2><b>Something went wrong. Pleas Make Sure That You Entered The Prediction Year.</b></h2>
+        <!-- Button to redirect to index.html -->
+        <button onclick="window.location.href='http://127.0.0.1:5000'">Home</button>
+    </div>
+</body>
+</html>
